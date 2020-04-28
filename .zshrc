@@ -48,7 +48,7 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 # DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -81,7 +81,7 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git zsh-autosuggestions kubectl sudo colorize)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting kubectl sudo colorize)
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 source $ZSH/oh-my-zsh.sh
 
@@ -110,7 +110,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /home/marko/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+alias resource='source ~/.bash_profile'      # Source bash_profile
+alias ll='ls -alh'                           # List files
+alias llr='ls -alhr'                         # List files (reverse)
+alias lls='ls -alhS'                         # List files by size
+alias llsr='ls -alhSr'                       # List files by size (reverse)
+alias lld='ls -alht'                         # List files by date
+alias lldr='ls -alhtr'                       # List files by date (reverse)
+alias lldc='ls -alhtU'                       # List files by date created
+alias lldcr='ls -alhtUr'
+alias perm="stat -f '%Lp'"                                                      # View the permissions of a file/dir as a number
+alias mkdir='mkdir -pv'                                                         # Make parent directories if needed
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"             # List the file structure of the current directory
+alias ..='cl ..'
+alias ...='cl ../../'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

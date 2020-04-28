@@ -23,7 +23,7 @@ check_exit_status() {
 greeting() {
 
 	echo
-	echo "Hello, $USER. Let's update this system and install zsh."
+	echo "Hello, $SUDO_USER. Let's update this system and install zsh."
 	echo
 }
 
@@ -43,8 +43,6 @@ update() {
 
         sudo apt-get install powerline fonts-powerline -y;
         check_exit_status
-
-        
 }
 
 housekeeping() {
@@ -57,13 +55,15 @@ housekeeping() {
 }
 
 copyingfiles() {
-        git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
-        cp .zshrc ~/.zshrc
+        git clone https://github.com/robbyrussell/oh-my-zsh.git /home/$SUDO_USER/.oh-my-zsh
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/$SUDO_USER/.oh-my-zsh/custom/themes/powerlevel10k
+        cp .zshrc /home/$SUDO_USER/.zshrc
+        cp .p10k.zsh /home/$SUDO_USER/.p10k.zsh
 }
 
 setdefaultshell() {
         chsh -s /bin/zsh
+        zsh
 }
 
 leave() {
