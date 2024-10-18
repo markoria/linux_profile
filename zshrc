@@ -71,7 +71,7 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat ssh gh fzf) 
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
-source ~/.zshrc
+source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
