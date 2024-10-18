@@ -30,13 +30,10 @@ greeting() {
 update() {
 
         sudo apt-get update;
-	check_exit_status
+	    check_exit_status
 
         sudo apt-get upgrade -y;
-	check_exit_status
-
-        sudo apt-get dist-upgrade -y;
-	check_exit_status
+	    check_exit_status
 
         sudo apt install zsh bat -y;
         check_exit_status
@@ -61,7 +58,7 @@ copyingfiles() {
 	    git clone https://github.com/zsh-users/you-should-use.git $ZSH_CUSOM/plugins/you-should-use
 	    git clone https://github.com/zsh-users/zsh-bat.git $ZSH_CUSOM/plugins/zsh-bat
 
-        dir=~/dotfiles                    # dotfiles directory
+        dir=~/linux_profile                    # dotfiles directory
 		olddir=~/dotfiles_old             # old dotfiles backup directory
 		files="bashrc vimrc vim zshrc oh-my-zsh template.toml"    # list of files/folders to symlink in homedir
 
