@@ -37,9 +37,13 @@ update() {
 
         sudo apt install zsh bat -y;
         check_exit_status
-
-		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-		check_exit_status
+        if [ -d "/home/$SUDO_USER/.oh-my-zsh" ]; then
+			echo "oh-my-zsh already installed"
+		else
+		    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+		    check_exit_status
+			echo "oh-my-zsh not installed"
+		fi
 
         sh -c "$(curl -s https://ohmyposh.dev/install.sh | bash -s)"
         check_exit_status
