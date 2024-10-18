@@ -38,6 +38,9 @@ update() {
         sudo apt install zsh bat -y;
         check_exit_status
 
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+		check_exit_status
+
         sh -c "$(curl -s https://ohmyposh.dev/install.sh | bash -s)"
         check_exit_status
 }

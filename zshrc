@@ -71,8 +71,7 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat ssh gh fzf) 
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
-eval "$(oh-my-posh init zsh --config ~/.template.toml)"
-
+source ~/.zshrc
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -123,3 +122,5 @@ qfind () {
 if [ -f /usr/bin/vim ]; then
   export EDITOR=vim
 fi
+
+eval "$(oh-my-posh init zsh --config ~/.template.toml)"
