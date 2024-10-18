@@ -60,7 +60,7 @@ copyingfiles() {
 
         dir=~/linux_profile                    # dotfiles directory
 		olddir=~/dotfiles_old             # old dotfiles backup directory
-		files="bashrc vimrc vim zshrc oh-my-zsh template.toml"    # list of files/folders to symlink in homedir
+		files="vimrc vim zshrc template.toml"    # list of files/folders to symlink in homedir
 
 		##########
 
