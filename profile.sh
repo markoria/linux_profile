@@ -59,13 +59,12 @@ housekeeping() {
 }
 
 copyingfiles() {
-        git clone https://github.com/robbyrussell/oh-my-zsh.git /home/$SUDO_USER/.oh-my-zsh
 	    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 	    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-	    git clone https://github.com/zsh-users/you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
-	    git clone https://github.com/zsh-users/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
-
-        dir=~/linux_profile                    # dotfiles directory
+        git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+        git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+		
+		dir=~/linux_profile                    # dotfiles directory
 		olddir=~/dotfiles_old             # old dotfiles backup directory
 		files="vimrc vim zshrc template.toml"    # list of files/folders to symlink in homedir
 
