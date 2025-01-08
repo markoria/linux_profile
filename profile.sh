@@ -30,20 +30,21 @@ greeting() {
 update() {
 
         sudo apt-get update;
-	    check_exit_status
+	      check_exit_status
 
         sudo apt-get upgrade -y;
-	    check_exit_status
+	      check_exit_status
 
-        sudo apt install zsh bat -y;
         check_exit_status
-        if [ -d "/home/$SUDO_USER/.oh-my-zsh" ]; then
-			echo "oh-my-zsh already installed"
-		else
-		    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-		    check_exit_status
-			echo "oh-my-zsh not installed"
-		fi
+        if [ -d "/home/$SUDO_USER/.oh-my-zsh" ]
+       	then
+            echo "oh-my-zsh already installed"
+	else
+        sudo apt install zsh bat -y;
+            sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+            check_exit_status
+            echo "oh-my-zsh not installed"
+        fi
 
         sh -c "$(curl -s https://ohmyposh.dev/install.sh | bash -s)"
         check_exit_status
@@ -61,8 +62,8 @@ housekeeping() {
 copyingfiles() {
 	    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 	    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-        git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
-        git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+            git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+            git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
 		
 		dir=~/linux_profile                    # dotfiles directory
 		olddir=~/dotfiles_old             # old dotfiles backup directory
