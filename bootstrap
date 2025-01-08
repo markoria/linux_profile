@@ -33,10 +33,11 @@ update() {
 	      check_exit_status
 
         sudo apt-get upgrade -y;
+        sudo apt install git unzip fzf -y;
 	      check_exit_status
 
         check_exit_status
-        if [ -d "/home/$SUDO_USER/.oh-my-zsh" ]
+        if [ -d "$HOME/.oh-my-zsh" ]
        	then
             echo "oh-my-zsh already installed"
 	else
